@@ -90,11 +90,11 @@ h1, h2, h3{
 }
 .hero-santoro h1{
   font-family:'Anton', sans-serif;
-  font-weight:500;
+  font-weight:700;
   text-transform:none;
   letter-spacing:0.02em;
   font-size:clamp(4rem, 13vw, 9rem);
-  line-height:1;
+  line-height:4px;
   color:var(--ink);
 }
 .hero-santoro-sub{

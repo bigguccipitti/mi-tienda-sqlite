@@ -1,10 +1,10 @@
 <?php
-// women.php — Todos los productos de mujer, divididos en Shoes / Pants / Bags
+// women.php — Todos los productos de mujer, divididos en Shoes / Pants / Bags / Jackets / Accessories / T-Shirts / Hoodies / Sweaters / Shorts
 require __DIR__ . '/includes/db.php';
 require __DIR__ . '/includes/functions.php';
 include __DIR__ . '/includes/header.php';
 
-$categorias = ['Shoes', 'Pants', 'Bags'];
+$categorias = ['Shoes', 'Pants', 'Bags', 'Jackets', 'Accessories', 'T-Shirts', 'Hoodies', 'Sweaters', 'Shorts'];
 $productosPorCategoria = [];
 
 foreach ($categorias as $cat) {

@@ -10,7 +10,9 @@ $bestsellers = $stmtBest->fetchAll();
 ?>
 
 <section class="hero-santoro">
-    <h1>SANTORO</h1>
+    <h1>SANTORO
+        
+    </h1>
     <p class="hero-santoro-sub">Verified luxury. Street-worn attitude.</p>
 </section>
 

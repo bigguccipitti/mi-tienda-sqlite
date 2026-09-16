@@ -20,7 +20,7 @@ if (!$producto) {
 
 <div class="detalle-producto">
     <img
-        src="images/productos/<?php echo htmlspecialchars($producto['imagen']); ?>"
+        src="images/productos/<?= htmlspecialchars($producto['imagen']) ?>"
         alt="<?php echo htmlspecialchars($producto['disenador'] . ' — ' . $producto['nombre']); ?>"
     >
     <div class="info-producto">

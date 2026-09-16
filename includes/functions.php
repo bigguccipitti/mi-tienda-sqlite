@@ -6,7 +6,7 @@ function render_producto($p) {
     <div class="tarjeta-producto">
         <a href="product.php?id=<?php echo $p['id']; ?>">
             <img
-                src="images/productos/<?php echo htmlspecialchars($p['imagen']); ?>"
+                src="images/productos/<?= htmlspecialchars($p['imagen']) ?>"
                 alt="<?php echo htmlspecialchars($p['disenador'] . ' — ' . $p['nombre']); ?>"
             >
             <span class="designer"><?php echo htmlspecialchars($p['disenador']); ?></span>
