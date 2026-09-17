@@ -15,9 +15,8 @@ if (!$producto) {
     exit;
 }
 
-// Piezas relacionadas: misma categoría y género, excluyendo esta pieza
 $stmtRelacionados = $pdo->prepare(
-    'SELECT id, disenador, nombre, precio, imagen, condicion, temporada
+    'SELECT id, disenador, nombre, precio, imagen
      FROM productos
      WHERE categoria = ? AND genero = ? AND id != ?
      ORDER BY id LIMIT 3'
@@ -48,8 +47,6 @@ $numeroArchivo = str_pad($producto['id'], 3, '0', STR_PAD_LEFT);
         <p class="precio">$<?php echo number_format($producto['precio'], 2); ?></p>
 
         <dl class="ficha-tecnica">
-            <div><dt>Condition</dt><dd><?php echo htmlspecialchars($producto['condicion']); ?></dd></div>
-            <div><dt>Season</dt><dd><?php echo htmlspecialchars($producto['temporada']); ?></dd></div>
             <div><dt>Category</dt><dd><?php echo htmlspecialchars($producto['categoria']); ?></dd></div>
             <div><dt>Archive N°</dt><dd><?php echo $numeroArchivo; ?></dd></div>
         </dl>

@@ -15,9 +15,7 @@ if (isset($_POST['agregar'])) {
 
 if (isset($_GET['sumar'])) {
     $id = (int)$_GET['sumar'];
-    if (isset($_SESSION['carrito'][$id])) {
-        $_SESSION['carrito'][$id]++;
-    }
+    if (isset($_SESSION['carrito'][$id])) $_SESSION['carrito'][$id]++;
     header('Location: cart.php');
     exit;
 }
@@ -26,9 +24,7 @@ if (isset($_GET['restar'])) {
     $id = (int)$_GET['restar'];
     if (isset($_SESSION['carrito'][$id])) {
         $_SESSION['carrito'][$id]--;
-        if ($_SESSION['carrito'][$id] <= 0) {
-            unset($_SESSION['carrito'][$id]);
-        }
+        if ($_SESSION['carrito'][$id] <= 0) unset($_SESSION['carrito'][$id]);
     }
     header('Location: cart.php');
     exit;
