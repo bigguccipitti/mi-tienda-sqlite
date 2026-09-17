@@ -1,5 +1,4 @@
 <?php
-// Conexión a la base de datos usando SQLite (no requiere servidor ni instalación extra)
 $dbPath = __DIR__ . '/../data/tienda.sqlite';
 $dsn = "sqlite:$dbPath";
 

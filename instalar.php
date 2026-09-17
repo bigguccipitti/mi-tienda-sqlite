@@ -1,7 +1,4 @@
 <?php
-// Ejecuta este archivo UNA VEZ (desde el navegador) para crear la base de datos:
-// http://localhost:8888/mi-tienda-sqlite/instalar.php
-
 require __DIR__ . '/includes/db.php';
 
 $sql = file_get_contents(__DIR__ . '/data/productos.sql');

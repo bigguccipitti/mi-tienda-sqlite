@@ -13,6 +13,27 @@ if (isset($_POST['agregar'])) {
     exit;
 }
 
+if (isset($_GET['sumar'])) {
+    $id = (int)$_GET['sumar'];
+    if (isset($_SESSION['carrito'][$id])) {
+        $_SESSION['carrito'][$id]++;
+    }
+    header('Location: cart.php');
+    exit;
+}
+
+if (isset($_GET['restar'])) {
+    $id = (int)$_GET['restar'];
+    if (isset($_SESSION['carrito'][$id])) {
+        $_SESSION['carrito'][$id]--;
+        if ($_SESSION['carrito'][$id] <= 0) {
+            unset($_SESSION['carrito'][$id]);
+        }
+    }
+    header('Location: cart.php');
+    exit;
+}
+
 if (isset($_GET['eliminar'])) {
     $id = (int)$_GET['eliminar'];
     unset($_SESSION['carrito'][$id]);
@@ -54,9 +75,15 @@ if (!empty($_SESSION['carrito'])) {
         <?php foreach ($items as $item): ?>
             <tr>
                 <td><?php echo htmlspecialchars($item['producto']['nombre']); ?></td>
-                <td><?php echo $item['cantidad']; ?></td>
+                <td>
+                    <div class="stepper">
+                        <a href="cart.php?restar=<?php echo $item['producto']['id']; ?>" class="stepper-btn">−</a>
+                        <span><?php echo $item['cantidad']; ?></span>
+                        <a href="cart.php?sumar=<?php echo $item['producto']['id']; ?>" class="stepper-btn">+</a>
+                    </div>
+                </td>
                 <td>$<?php echo number_format($item['subtotal'], 2); ?></td>
-                <td><a href="cart.php?eliminar=<?php echo $item['producto']['id']; ?>">Remove</a></td>
+                <td><a href="cart.php?eliminar=<?php echo $item['producto']['id']; ?>" class="quitar">Remove</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
