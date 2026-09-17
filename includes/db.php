@@ -1,7 +1,5 @@
 <?php
 // Conexión a la base de datos usando SQLite (no requiere servidor ni instalación extra)
-// El archivo de la base de datos se crea automáticamente en data/tienda.sqlite
-
 $dbPath = __DIR__ . '/../data/tienda.sqlite';
 $dsn = "sqlite:$dbPath";
 

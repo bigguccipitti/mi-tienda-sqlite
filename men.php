@@ -1,10 +1,10 @@
 <?php
-// men.php — Todos los productos de hombre, divididos en Shoes / Pants / Bags / Jackets / Accessories / T-Shirts / Hoodies / Sweaters / Shorts
+// men.php — Productos de men, divididos en Shoes / Pants / Bags
 require __DIR__ . '/includes/db.php';
 require __DIR__ . '/includes/functions.php';
 include __DIR__ . '/includes/header.php';
 
-$categorias = ['Shoes', 'Pants', 'Bags', 'Jackets', 'Accessories', 'T-Shirts', 'Hoodies', 'Sweaters', 'Shorts'];
+$categorias = ['Shoes', 'Pants', 'Bags'];
 $productosPorCategoria = [];
 
 foreach ($categorias as $cat) {
@@ -14,11 +14,11 @@ foreach ($categorias as $cat) {
 }
 ?>
 
-<h1>Men</h1>
+<h1 class="reveal">Men</h1>
 
 <?php foreach ($categorias as $cat): ?>
     <section class="seccion-genero" id="<?php echo strtolower($cat); ?>">
-        <div class="seccion-head">
+        <div class="seccion-head reveal">
             <h2><?php echo $cat; ?></h2>
             <span><?php echo count($productosPorCategoria[$cat]); ?> pieces</span>
         </div>

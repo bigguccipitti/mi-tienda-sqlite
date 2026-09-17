@@ -5,30 +5,28 @@ include __DIR__ . '/includes/header.php';
 $confirmado = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Aquí, en un proyecto real, se procesaría el pago (Stripe, PayPal, etc.)
-    // Por ahora, solo simulamos una confirmación de orden.
     $confirmado = true;
     $_SESSION['carrito'] = [];
 }
 ?>
 
-<h1>Checkout (práctica)</h1>
+<h1 class="reveal">Checkout</h1>
 
 <?php if ($confirmado): ?>
-    <p>¡Gracias! Tu orden de práctica fue registrada (no se procesó ningún pago real).</p>
-    <a href="index.php">Volver a la tienda</a>
+    <p>Thank you — your practice order was recorded (no real payment was processed).</p>
+    <a href="index.php">Back to shop</a>
 <?php else: ?>
-    <form method="post" class="form-checkout">
-        <label>Nombre completo
+    <form method="post" class="form-checkout reveal">
+        <label>Full name
             <input type="text" name="nombre" required>
         </label>
-        <label>Correo electrónico
+        <label>Email
             <input type="email" name="correo" required>
         </label>
-        <label>Dirección de envío
+        <label>Shipping address
             <input type="text" name="direccion" required>
         </label>
-        <button type="submit">Confirmar orden (práctica)</button>
+        <button type="submit">Confirm order (practice)</button>
     </form>
 <?php endif; ?>
 

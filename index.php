@@ -1,5 +1,5 @@
 <?php
-// index.php — Pantalla principal: hero SANTORO + Best Sellers
+// index.php — Pantalla principal: hero editorial dividido + Best Sellers
 require __DIR__ . '/includes/db.php';
 require __DIR__ . '/includes/functions.php';
 include __DIR__ . '/includes/header.php';
@@ -10,14 +10,17 @@ $bestsellers = $stmtBest->fetchAll();
 ?>
 
 <section class="hero-santoro">
-    <h1>SANTORO
-        
-    </h1>
-    <p class="hero-santoro-sub">Verified luxury. Street-worn attitude.</p>
+    <div class="hero-image-block"></div>
+    <div class="hero-copy reveal">
+        <p class="hero-eyebrow">Selected Pieces — Autumn 2026</p>
+        <h1>SANTORO.</h1>
+        <p class="hero-santoro-sub">Verified luxury. Street-worn attitude — curated, not manufactured.</p>
+        <a href="#best-sellers" class="hero-cta">View the Archive</a>
+    </div>
 </section>
 
 <section class="seccion-genero" id="best-sellers">
-    <div class="seccion-head">
+    <div class="seccion-head reveal">
         <h2>Best Sellers</h2>
         <span><?php echo count($bestsellers); ?> pieces</span>
     </div>

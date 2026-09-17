@@ -1,6 +1,6 @@
 <?php
-// Ejecuta este archivo UNA VEZ para crear la base de datos e insertar los productos de ejemplo:
-//   php instalar.php
+// Ejecuta este archivo UNA VEZ (desde el navegador) para crear la base de datos:
+// http://localhost:8888/mi-tienda-sqlite/instalar.php
 
 require __DIR__ . '/includes/db.php';
 

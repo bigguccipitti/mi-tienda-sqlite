@@ -1,7 +1,5 @@
 <?php
 // product.php — Detalle de un producto
-// Se conecta con: includes/db.php, includes/header.php, includes/footer.php, css/style.css
-
 require __DIR__ . '/includes/db.php';
 include __DIR__ . '/includes/header.php';
 
@@ -18,15 +16,13 @@ if (!$producto) {
 }
 ?>
 
-<div class="detalle-producto">
+<div class="detalle-producto reveal">
     <img
-        src="images/productos/<?= htmlspecialchars($producto['imagen']) ?>"
+        src="images/productos/<?php echo htmlspecialchars($producto['imagen']); ?>"
         alt="<?php echo htmlspecialchars($producto['disenador'] . ' — ' . $producto['nombre']); ?>"
     >
     <div class="info-producto">
-        <span class="designer">
-            <?php echo htmlspecialchars($producto['disenador']); ?> · <?php echo htmlspecialchars($producto['genero']); ?>
-        </span>
+        <span class="designer"><?php echo htmlspecialchars($producto['disenador']); ?></span>
         <h1><?php echo htmlspecialchars($producto['nombre']); ?></h1>
         <p class="precio">$<?php echo number_format($producto['precio'], 2); ?></p>
         <p><?php echo htmlspecialchars($producto['descripcion']); ?></p>
