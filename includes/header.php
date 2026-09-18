@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="grain"></div>
     <div class="cursor-dot" id="cursorDot"></div>
 
     <header class="site-header">
@@ -15,7 +16,6 @@
         <nav>
             <a href="women.php">Women</a>
             <a href="men.php">Men</a>
-            <a href="journal.php">Journal</a>
             <a href="cart.php">Cart (<?php echo isset($_SESSION['carrito']) ? array_sum($_SESSION['carrito']) : 0; ?>)</a>
         </nav>
     </header>

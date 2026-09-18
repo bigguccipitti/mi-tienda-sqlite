@@ -12,7 +12,6 @@
             </div>
             <div>
                 <span class="footer-label">About</span>
-                <a href="journal.php">Journal</a>
                 <a href="#">Authentication</a>
                 <a href="#">Sell With Us</a>
             </div>

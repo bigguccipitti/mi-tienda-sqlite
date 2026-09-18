@@ -7,7 +7,7 @@ $categorias = ['Shoes', 'Pants', 'Bags'];
 $productosPorCategoria = [];
 
 foreach ($categorias as $cat) {
-    $stmt = $pdo->prepare('SELECT id, disenador, nombre, precio, imagen, condicion, temporada FROM productos WHERE genero = ? AND categoria = ? ORDER BY id');
+    $stmt = $pdo->prepare('SELECT id, disenador, nombre, precio, imagen FROM productos WHERE genero = ? AND categoria = ? ORDER BY id');
     $stmt->execute(['Women', $cat]);
     $productosPorCategoria[$cat] = $stmt->fetchAll();
 }
