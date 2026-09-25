@@ -18,7 +18,7 @@ function render_producto($p, $sizeClass = '') {
         </a>
         <form method="post" action="cart.php">
             <input type="hidden" name="id" value="<?php echo $p['id']; ?>">
-            <button type="submit" name="agregar" class="boton">Add to Cart</button>
+            <button type="submit" name="agregar" class="boton">Add to Cart — <?php echo htmlspecialchars($p['nombre']); ?></button>
         </form>
     </div>
     <?php

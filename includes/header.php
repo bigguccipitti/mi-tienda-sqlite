@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="grain"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
+    <a href="#contenido" class="skip-link">Skip to content</a>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
     <header class="site-header">
         <a href="index.php" class="logo">SANTORO.</a>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="women.php">Women</a>
             <a href="men.php">Men</a>
             <a href="cart.php">Cart (<?php echo isset($_SESSION['carrito']) ? array_sum($_SESSION['carrito']) : 0; ?>)</a>
         </nav>
     </header>
-    <main class="container">
+    <main class="container" id="contenido">

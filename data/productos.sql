@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS productos (
     stock INTEGER DEFAULT 10
 );
 
--- ================= WOMEN — SHOES =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Gucci', 'Heeled Loafer', 890.00, 'Loafer con tacón de metal, piel granulada. Pieza verificada de archivo.', 'heeled-loafer.jpg', 'Women', 'Shoes', 1
 WHERE NOT EXISTS (SELECT 1 FROM productos);
@@ -28,7 +27,6 @@ INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, c
 SELECT 'Louis Vuitton', 'Monogram Boot', 1340.00, 'Bota alta con lona monogram y suela track. Pieza verificada de archivo.', 'monogram-boot.jpg', 'Women', 'Shoes', 0
 WHERE (SELECT COUNT(*) FROM productos) = 3;
 
--- ================= WOMEN — PANTS =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Louis Vuitton', 'Tailored Trouser', 980.00, 'Pantalón sastre de lana fría, corte recto. Pieza verificada de archivo.', 'tailored-trouser-women.jpg', 'Women', 'Pants', 0
 WHERE (SELECT COUNT(*) FROM productos) = 4;
@@ -41,7 +39,6 @@ INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, c
 SELECT 'Gucci', 'Wide-Leg Wool', 890.00, 'Pantalón ancho de lana con pinzas. Pieza verificada de archivo.', 'wide-leg-wool.jpg', 'Women', 'Pants', 0
 WHERE (SELECT COUNT(*) FROM productos) = 6;
 
--- ================= WOMEN — BAGS =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Gucci', 'GG Canvas Bag', 1320.00, 'Bolso GG canvas con asa de cadena. Pieza verificada de archivo.', 'gg-canvas-bag.jpg', 'Women', 'Bags', 1
 WHERE (SELECT COUNT(*) FROM productos) = 7;
@@ -54,7 +51,6 @@ INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, c
 SELECT 'Maison Margiela', 'Glam Slam Bag', 1560.00, 'Bolso acolchado con cierre metálico. Pieza verificada de archivo.', 'glam-slam-bag.jpg', 'Women', 'Bags', 0
 WHERE (SELECT COUNT(*) FROM productos) = 9;
 
--- ================= MEN — SHOES =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Maison Margiela', 'Tabi Boot', 890.00, 'Bota Tabi de cuero, silueta partida original. Pieza verificada de archivo.', 'tabi-boot.jpg', 'Men', 'Shoes', 1
 WHERE (SELECT COUNT(*) FROM productos) = 10;
@@ -67,7 +63,6 @@ INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, c
 SELECT 'Gucci', 'Horsebit Loafer', 720.00, 'Loafer con horsebit de metal, piel lisa. Pieza verificada de archivo.', 'horsebit-loafer.jpg', 'Men', 'Shoes', 0
 WHERE (SELECT COUNT(*) FROM productos) = 12;
 
--- ================= MEN — PANTS =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Miu Miu', 'Raw Denim', 640.00, 'Denim crudo sin lavar, corte recto. Pieza verificada de archivo.', 'raw-denim-men.jpg', 'Men', 'Pants', 0
 WHERE (SELECT COUNT(*) FROM productos) = 13;
@@ -80,7 +75,6 @@ INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, c
 SELECT 'Maison Margiela', 'Cargo Pant', 680.00, 'Pantalón cargo con costuras expuestas. Pieza verificada de archivo.', 'cargo-pant.jpg', 'Men', 'Pants', 0
 WHERE (SELECT COUNT(*) FROM productos) = 15;
 
--- ================= MEN — BAGS =================
 INSERT INTO productos (disenador, nombre, precio, descripcion, imagen, genero, categoria, bestseller)
 SELECT 'Louis Vuitton', 'Monogram Backpack', 2140.00, 'Mochila monogram estructurada, correas ajustables. Pieza verificada de archivo.', 'monogram-backpack.jpg', 'Men', 'Bags', 0
 WHERE (SELECT COUNT(*) FROM productos) = 16;

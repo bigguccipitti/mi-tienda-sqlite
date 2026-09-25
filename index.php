@@ -11,11 +11,11 @@ $totalPiezas = $pdo->query('SELECT COUNT(*) as total FROM productos')->fetch()['
 ?>
 
 <section class="hero-santoro">
-    <div class="hero-image-block"></div>
+    <div class="hero-image-block" aria-hidden="true"></div>
     <div class="hero-copy reveal">
         <p class="hero-eyebrow">Selected Pieces — Autumn 2026</p>
         <h1>SANTORO.</h1>
-        <p class="hero-santoro-sub">Verified luxury. Street-worn attitude — curated, not manufactured.</p>
+        <p class="hero-santoro-sub">Curated luxury. Street-worn attitude — sourced, not manufactured.</p>
         <a href="#best-sellers" class="hero-cta">View the Archive (<?php echo $totalPiezas; ?> pieces)</a>
     </div>
 </section>

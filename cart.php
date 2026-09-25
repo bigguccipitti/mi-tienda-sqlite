@@ -73,18 +73,26 @@ if (!empty($_SESSION['carrito'])) {
                 <td><?php echo htmlspecialchars($item['producto']['nombre']); ?></td>
                 <td>
                     <div class="stepper">
-                        <a href="cart.php?restar=<?php echo $item['producto']['id']; ?>" class="stepper-btn">−</a>
-                        <span><?php echo $item['cantidad']; ?></span>
-                        <a href="cart.php?sumar=<?php echo $item['producto']['id']; ?>" class="stepper-btn">+</a>
+                        <a href="cart.php?restar=<?php echo $item['producto']['id']; ?>"
+                           class="stepper-btn"
+                           aria-label="Decrease quantity of <?php echo htmlspecialchars($item['producto']['nombre']); ?>">−</a>
+                        <span aria-live="polite"><?php echo $item['cantidad']; ?></span>
+                        <a href="cart.php?sumar=<?php echo $item['producto']['id']; ?>"
+                           class="stepper-btn"
+                           aria-label="Increase quantity of <?php echo htmlspecialchars($item['producto']['nombre']); ?>">+</a>
                     </div>
                 </td>
                 <td>$<?php echo number_format($item['subtotal'], 2); ?></td>
-                <td><a href="cart.php?eliminar=<?php echo $item['producto']['id']; ?>" class="quitar">Remove</a></td>
+                <td>
+                    <a href="cart.php?eliminar=<?php echo $item['producto']['id']; ?>"
+                       class="quitar"
+                       aria-label="Remove <?php echo htmlspecialchars($item['producto']['nombre']); ?> from cart">Remove</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
     <p class="total">Total: $<?php echo number_format($total, 2); ?></p>
-    <a href="checkout.php" class="boton">Checkout</a>
+    <a href="checkout.php" class="boton">Proceed to Checkout</a>
 <?php endif; ?>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

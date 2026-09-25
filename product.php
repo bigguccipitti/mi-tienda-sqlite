@@ -27,7 +27,7 @@ $relacionados = $stmtRelacionados->fetchAll();
 $numeroArchivo = str_pad($producto['id'], 3, '0', STR_PAD_LEFT);
 ?>
 
-<nav class="breadcrumb reveal">
+<nav class="breadcrumb reveal" aria-label="Breadcrumb">
     <a href="index.php">Archive</a> /
     <a href="<?php echo strtolower($producto['genero']); ?>.php"><?php echo htmlspecialchars($producto['genero']); ?></a> /
     <span><?php echo htmlspecialchars($producto['categoria']); ?></span>
