@@ -1,17 +1,11 @@
 <?php
-require_once __DIR__ . '/../config.php';
-
-$dbPath = __DIR__ . '/../data/tienda.sqlite';
-$dsn = "sqlite:$dbPath";
-
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
+// includes/db.php
+$db_path = __DIR__ . '/../data/tienda.sqlite';
 
 try {
-    $pdo = new PDO($dsn, null, null, $options);
-    $pdo->exec('PRAGMA foreign_keys = ON;');
-} catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    $pdo = new PDO("sqlite:" . $db_path);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Error de conexión a la base de datos: " . $e->getMessage());
 }
