@@ -1,0 +1,47 @@
+.admin-body{ background:var(--bone); min-height:100vh; }
+.admin-wrap{ max-width:960px; margin:0 auto; padding:2.4rem; }
+
+.admin-login-box{
+  max-width:360px; margin:12vh auto; padding:2.4rem;
+  background:var(--paper); border:1px solid var(--line);
+}
+.admin-login-box h1{ font-size:1.3rem; margin-bottom:1.6rem; }
+.admin-login-box h1 span{ font-family:'Archivo', sans-serif; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--metal-texto); display:block; margin-top:0.3rem; }
+
+.admin-nav{ display:flex; gap:1.6rem; padding-bottom:1.4rem; margin-bottom:2rem; border-bottom:1px solid var(--line); }
+.admin-nav a{ font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--metal-texto); }
+.admin-nav a.activo, .admin-nav a:hover{ color:var(--near-black); }
+
+.tarjetas-resumen{ display:flex; gap:1.4rem; margin:1.6rem 0 2.4rem; }
+.tarjeta-resumen{ flex:1; padding:1.4rem; border:1px solid var(--line); background:var(--paper); }
+.tarjeta-resumen .numero{ display:block; font-family:'Newsreader', serif; font-size:2rem; }
+.tarjeta-resumen .etiqueta{ font-size:0.72rem; color:var(--metal-texto); letter-spacing:0.04em; }
+
+.tabla-admin{ width:100%; border-collapse:collapse; margin-top:1rem; }
+.tabla-admin th{ text-align:left; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--metal-texto); padding:0.7rem 0.5rem; border-bottom:1px solid var(--near-black); }
+.tabla-admin td{ padding:0.8rem 0.5rem; border-bottom:1px solid var(--line); font-size:0.85rem; }
+
+.form-admin{ display:flex; flex-direction:column; gap:1.2rem; max-width:640px; }
+.form-admin label{ display:flex; flex-direction:column; gap:0.4rem; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--metal-texto); }
+.form-admin input, .form-admin select, .form-admin textarea{
+  padding:0.7rem 0.8rem; border:1px solid var(--line); border-radius:0;
+  font-family:'Archivo', sans-serif; font-size:0.9rem; background:var(--paper); color:var(--near-black);
+  text-transform:none; letter-spacing:normal;
+}
+.form-admin h2{ font-size:1rem; margin-top:1rem; padding-top:1rem; border-top:1px solid var(--line); }
+
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.grid-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.2rem; }
+@media (max-width:640px){ .grid-2, .grid-3{ grid-template-columns:1fr; } }
+
+.previsualizacion-precio{ padding:1.2rem; border:1px solid var(--near-black); background:var(--paper); }
+.precio-final{ font-family:'Newsreader', serif; font-style:italic; font-size:1.3rem; margin-top:0.8rem; }
+
+.acciones-form{ display:flex; gap:1rem; flex-wrap:wrap; }
+.boton-secundario{ background:transparent; color:var(--near-black); }
+.boton-secundario:hover{ background:var(--near-black); color:var(--paper); }
+
+.mensaje-exito{ background:rgba(46,90,50,0.08); border:1px solid #2e5a32; color:#2e5a32; padding:0.8rem 1rem; margin-bottom:1rem; font-size:0.85rem; }
+
+.fotos-qc-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:1rem; margin:1.4rem 0; }
+.fotos-qc-grid img{ width:100%; aspect-ratio:3/4; object-fit:cover; border:1px solid var(--line); }
