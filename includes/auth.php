@@ -77,4 +77,18 @@ function admin_cerrar_sesion(): void {
     admin_iniciar_sesion_segura();
     $_SESSION = [];
     session_destroy();
+    
+    function admin_iniciar_sesion_segura() {
+    if (session_status() === PHP_SESSION_NONE) {
+        // secure debe ser false si no usas HTTPS (http://192.168.50.233)
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path' => '/',
+            'domain' => '',
+            'secure' => false, 
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+        session_start();
+    }
 }
